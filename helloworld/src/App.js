@@ -43,11 +43,32 @@ class Four extends Component {
   }
 }
 
+const chu = ["Tung","Trang","Yeu","Nhau","Lam"];
+const chu2 = chu.map((x) => x + " ");
+
+const so = [1,2,3,4,5];
+// const so2 = so.map((y)=>y*2 + ",");
+
+class Five extends Component {
+  render() {
+    return (
+      <div>
+        <p>{chu2}</p>
+        <ul>
+          {so.map((x) => (<li>so la: {x*2}</li>))}
+        </ul>
+      </div>
+    );
+  }
+}
+
+
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
+        <Five />
         <One text="thành công"/>
         <One text="thất bại"/>
         <Two/>
