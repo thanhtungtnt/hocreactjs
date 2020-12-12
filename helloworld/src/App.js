@@ -3,12 +3,12 @@ import logo from './logo.svg';
 import './App.css';
 
 //Cach khoi tao component #1
-function One(){
+function One(props){
   //chỉ có 1 thẻ div ngoài cùng, 2 thẻ sẽ báo lỗi
   //muốn viết nhiều dòng thì cho vào dấu ngoặc : return (dong 1.... dong 2.....);
   return(
     <div>
-      <h3>Nỗ lực để thành công</h3>
+      <h3>Nỗ lực để {props.text}</h3>
       <h3>Nỗ lực để tốt hơn 1% mỗi ngày</h3>
     </div>
   );
@@ -37,8 +37,7 @@ class Four extends Component {
   render() {
     return (
       <div>
-        <h3>Kiều Trang</h3>
-        <h3>Thanh Tùng</h3>
+        <h3>{this.props.text} xinh</h3>
       </div>
     );
   }
@@ -49,10 +48,12 @@ function App() {
     <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <One/>
+        <One text="thành công"/>
+        <One text="thất bại"/>
         <Two/>
         <Three/>
-        <Four/>
+        <Four text="Linh Đan"/>
+        <Four text="Nhím"/>
         <a
           className="App-link"
           href="https://reactjs.org"
