@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 class Content extends Component {
-    // constructor(props){
-    //     super(props);
-    // }
-
+    edit = () => {console.log("Edit"); }
+    remove = () => {console.log("Remove"); }
     render() {
+        
+
         return (
             <div>
                 <section>
@@ -22,6 +22,10 @@ class Content extends Component {
                                     <p>{this.props.desc}</p>
                                 </div>
                             </div>
+                        </div>
+                        <div className="row align-items-center">
+                            <button className="btn btn-info" onClick={this.edit}>Edit</button>
+                            <button className="btn btn-warning" onClick={this.remove}>Remove</button>
                         </div>
                     </div>
                 </section>
