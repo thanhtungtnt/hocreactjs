@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {BrowserRouter as Router, 
         Switch,
         Route,
-        Link
-} from 'react-router-dom'
+        Link,
+        NavLink
+} from 'react-router-dom';
 import About from './Components/About.js';
 import Users from './Components/Users.js';
 import Home from './Components/Home.js';
@@ -15,21 +16,16 @@ class App extends Component {
           <nav>
             <ul>
               <li>
-                <Link to="/">Home</Link>
+                <NavLink to="/">Home</NavLink>
               </li>
               <li>
-                <Link to="/about">About</Link>
+                <NavLink to="/about">About</NavLink>
               </li>
               <li>
-                <Link to="/users">Users</Link>
+                <NavLink to="/users">Users</NavLink>
               </li>
             </ul>
           </nav>
-
-          {/* A <Switch> looks through its children <Route>s and
-              renders the first one that matches the current URL. */}
-
-         
 
           <Switch>
             <Route path="/users">
