@@ -1,9 +1,6 @@
 import React, { Component } from 'react';
 
 class PortfolioItem extends Component {
-    constructor(props){
-        super(props);
-    }
 
     render() {
         return (
@@ -13,6 +10,7 @@ class PortfolioItem extends Component {
                     <div className="portfolio-item-caption-content text-center text-white"><i className="fas fa-plus fa-3x" /></div>
                 </div>
                 <img className="img-fluid" src={"assets/img/portfolio/" + this.props.img} alt="..." />
+                <h3>{this.props.title}</h3>
                 </div>
             
                 <div className="btn btn-group">
