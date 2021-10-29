@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 
 class PortfolioItem extends Component {
+    // constructor(props){
+    //     super(props)
+    // }
 
+    thongbao = () => {alert('cach xu ly edit'); }
+    thongbao3 = (x) => {alert(x);}
     render() {
         return (
             <div className="col-md-6 col-lg-4 mb-5">
@@ -14,8 +19,8 @@ class PortfolioItem extends Component {
                 </div>
             
                 <div className="btn btn-group">
-                    <button className="btn btn-block btn-info">Edit</button>
-                    <button className="btn btn-block btn-danger">Remove</button>
+                    <button className="btn btn-block btn-info" onClick={this.thongbao}>Edit</button>
+                    <button className="btn btn-block btn-danger" onClick={() => this.thongbao3('xoa item nay')}>Remove</button>
                 </div>
             </div>
         );
