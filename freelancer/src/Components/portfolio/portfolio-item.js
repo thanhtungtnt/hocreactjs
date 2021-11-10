@@ -1,12 +1,46 @@
 import React, { Component } from 'react';
 
 class PortfolioItem extends Component {
-    // constructor(props){
-    //     super(props)
-    // }
+    constructor(props){
+        super(props);
+        this.state = {
+            trangThai: 0
+        }
 
-    thongbao = () => {alert('cach xu ly edit'); }
-    thongbao3 = (x) => {alert(x);}
+    }
+
+    onClickEdit = () => {
+        this.setState({
+            trangThai: 1
+        });
+    }
+    onClickSave = () => {
+        this.setState({
+            trangThai: 0
+        });
+    }
+
+    renderButton = () => (
+        <div className="btn btn-group">
+            <button className="btn btn-block btn-info" onClick={() => this.onClickEdit()}>Edit</button>
+            <button className="btn btn-block btn-danger" onClick={() => this.thongbao3('xoa item nay')}>Remove</button>
+        </div>   
+    )
+    renderForm = () => (
+        <form className="form-inline">
+            <input defaultValue={this.props.title} type="text" name="ten" className="form-control" />
+            <button className="btn btn-block btn-success" onClick={() => this.onClickSave()}>Save</button>
+        </form>
+    )
+
+    displayCheck = () => {
+        if(this.state.trangThai === 0){
+            return this.renderButton();
+        }else{
+            return this.renderForm();
+        }
+    }
+
     render() {
         return (
             <div className="col-md-6 col-lg-4 mb-5">
@@ -17,18 +51,9 @@ class PortfolioItem extends Component {
                 <img className="img-fluid" src={"assets/img/portfolio/" + this.props.img} alt="..." />
                 <h3>{this.props.title}</h3>
                 </div>
-            
-                <div className="btn btn-group">
-                    <button className="btn btn-block btn-info" onClick={this.thongbao}>Edit</button>
-                    <button className="btn btn-block btn-danger" onClick={() => this.thongbao3('xoa item nay')}>Remove</button>
-                </div>
+                {this.displayCheck()}
 
-                <form className="form-inline">
-                    
-                      <input type="text" name="ten" className="form-control" placeholder aria-describedby="helpId" />
-                      <button className="btn btn-block btn-success">Save</button>
-                    
-                </form>
+                
             </div>
         );
     }
