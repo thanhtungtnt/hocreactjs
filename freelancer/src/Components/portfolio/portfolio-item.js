@@ -22,6 +22,13 @@ class PortfolioItem extends Component {
                     <button className="btn btn-block btn-info" onClick={this.thongbao}>Edit</button>
                     <button className="btn btn-block btn-danger" onClick={() => this.thongbao3('xoa item nay')}>Remove</button>
                 </div>
+
+                <form className="form-inline">
+                    
+                      <input type="text" name="ten" className="form-control" placeholder aria-describedby="helpId" />
+                      <button className="btn btn-block btn-success">Save</button>
+                    
+                </form>
             </div>
         );
     }
